@@ -1,0 +1,420 @@
+/* Theme variables */
+:root {
+  --brand: #BFE8C9;
+  /* pastel green */
+  --brand-dark: #8FCF92;
+  --muted: #6c757d;
+  /* Custom variables for About page */
+  --brand-dark-text: #1b5e20;
+  /* สีเขียวเข้มสำหรับข้อความตำแหน่งงาน */
+  --highlight-green: #4CAF50;
+  /* เขียวกลาง (สำหรับขอบ/พื้นหลังอ่อน) */
+}
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* เพิ่ม sans-serif เพื่อความปลอดภัย */
+  color: #333;
+  /* ปรับให้ดูนุ่มนวลขึ้น */
+  background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Prompt', 'Poppins', sans-serif;
+}
+
+a {
+  color: inherit
+}
+
+/* Reduce default link color shift */
+a:hover {
+  color: var(--brand-dark);
+  /* ปรับสีลิงก์เมื่อ Hover */
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 3px solid rgba(143, 207, 146, .25);
+  outline-offset: 2px
+}
+
+/* Accessibility */
+
+/* 1. Typography & Readability ENHANCEMENTS */
+h2,
+h3 {
+  position: relative;
+  padding-bottom: 8px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  /* การใช้ CSS Variable ใน linear-gradient ถูกต้อง */
+  background: linear-gradient(90deg, var(--brand-dark) 0%, var(--brand) 100%);
+  border-radius: 999px;
+}
+
+.text-center h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.lead {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  /* เพิ่มระยะห่าง */
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+
+/* NAV & BRAND */
+.navbar-brand {
+  font-size: 1.05rem;
+  transition: all 0.5s ease-in-out;
+}
+
+/* เปลี่ยน animation เป็น all เพื่อความเข้ากันได้ */
+.navbar-brand:hover {
+  /* ลูกเล่นการสั่นไหวเล็กน้อย */
+  animation: slightBounce 0.5s ease-in-out;
+}
+
+.navbar .btn-outline-success {
+  border-color: var(--brand);
+  color: var(--brand)
+}
+
+.navbar .btn-success {
+  /* ใช้สีล้วนใน gradient เพื่อความเข้ากันได้ */
+  background: var(--brand-dark);
+  border: 0;
+  box-shadow: 0 4px 12px rgba(143, 207, 146, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navbar .btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(143, 207, 146, 0.6);
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23666' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+}
+
+.navbar.scrolled {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: .28s;
+}
+
+
+/* HERO */
+header#home {
+  /* การใช้ linear-gradient ถูกต้องแล้ว */
+  background: linear-gradient(180deg, rgba(191, 232, 201, 0.12), rgba(255, 255, 255, 0));
+}
+
+.hero-img {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.08);
+}
+
+.hero-col {
+  padding-right: 0
+}
+
+@media(min-width:768px) {
+  .hero-col {
+    padding-right: 2.5rem
+  }
+}
+
+@media (min-width:992px) {
+  header .display-6 {
+    font-size: 2.1rem
+  }
+}
+
+@media(min-width:1200px) {
+  header .display-6 {
+    font-size: 2.4rem
+  }
+}
+
+
+/* CARDS & FEATURES */
+.feature-card {
+  transition: transform .18s ease, box-shadow .18s ease;
+  border: 1px solid rgba(143, 207, 146, 0.06);
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(143, 207, 146, 0.3);
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 0 4px rgba(191, 232, 201, 0.35);
+  transition: .25s ease;
+}
+
+.card img {
+  border: 4px solid #fff
+}
+
+.card .card-body {
+  padding-top: 1rem
+}
+
+/* Card body consistent */
+#testiCarousel img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%
+}
+
+
+/* PRODUCT CARDS (ENHANCED) */
+.product-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.product-card .card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.product-card .card-body {
+  min-height: 120px
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(143, 207, 146, 0.4);
+}
+
+@media (max-width:576px) {
+  .product-card .card-img-top {
+    height: 160px
+  }
+}
+
+.product-badge {
+  /* สไตล์สำหรับ Badge สินค้าใหม่ */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--brand-dark);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* UTILITIES */
+section {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem
+}
+
+.text-md-end {
+  text-align: left
+}
+
+@media(min-width:768px) {
+  .text-md-end {
+    text-align: right
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth scrolling */
+.fade-in {
+  /* Fade-in animation on scroll */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp .8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* BUTTON SOFT NEUMORPHIC */
+.btn-soft {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 22px;
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.08),
+    -6px -6px 12px rgba(255, 255, 255, 0.8);
+  transition: .25s;
+}
+
+.btn-soft:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    10px 10px 20px rgba(0, 0, 0, 0.1),
+    -10px -10px 20px rgba(255, 255, 255, 0.7);
+}
+
+.btn-soft:active {
+  /* เพิ่ม Active state */
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+  transform: translate(1px, 1px);
+}
+:root {
+    --brand-dark-text: #1b5e20;
+    /* สีเขียวเข้มสำหรับข้อความตำแหน่งงาน */
+    --highlight-green: #4CAF50;
+    /* เขียวกลาง (สำหรับขอบ/พื้นหลังอ่อน) */
+  }
+
+/* FOOTER */
+footer#contact {
+  background: linear-gradient(180deg, #ffffff, #fbfffb)
+}
+
+footer .btn {
+  border-radius: 999px
+}
+
+.footer-social .btn {
+  border-color: rgba(100, 100, 100, 0.12);
+  color: #444;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.04);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.footer-social .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.08);
+  background: linear-gradient(180deg, #f7fdf8, #ffffff);
+}
+
+/* KEYFRAMES */
+@keyframes slightBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* เพิ่ม keyframes ที่ใช้ใน fade-in */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ส่วนแก้ไขสำหรับหน้า About.html โดยเฉพาะ */
+/* ตำแหน่งงานทุกตำแหน่งเป็นสีเขียวเข้ม (สำคัญมาก: ต้องมี !important) */
+.team .position-title {
+  color: var(--brand-dark-text) !important;
+  font-weight: bold;
+}
+
+.about-header {
+  padding: 40px 0 20px 0;
+  background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 100%);
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.about-header h1 {
+  color: var(--brand-dark-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-header p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1rem;
+  color: var(--highlight-green);
+}
+
+/* สไตล์การ์ดทีม */
+.team .card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* สไตล์สำหรับคนปัจจุบันที่โดน Highlight */
+.team .card.highlight {
+  border: 4px solid var(--highlight-green);
+}
+
+.team .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--highlight-green);
+}
+
+.team .card img {
+  border: 4px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team .card:hover img {
+  transform: scale(1.05);
+}
+
+.team .card-body {
+  padding-top: 10px;
+}
+
+.team .card-title {
+  color: var(--brand-dark-text);
+}
+
+/* ปุ่ม GitHub เปลี่ยนสีเมื่อ Hover */
+.team .btn-outline-dark {
+  border-color: #757575;
+  color: #757575;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.team .btn-outline-dark:hover {
+  background-color: var(--highlight-green);
+  border-color: var(--highlight-green);
+  color: #fff;
+}

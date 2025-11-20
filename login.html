@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="th">
+<head>
+   <link rel="icon" type="image/x-icon" href="S__33316871.jpg" >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login — Second Chance Clothing Co.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #007bff; /* Blue */
+      --secondary-color: #198754; /* Green (Success) */
+    }
+
+    body {
+      font-family: 'Prompt', sans-serif;
+      background: linear-gradient(135deg, #d7e1ec 0%, #f5f9f6 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Glassmorphism Login Card (ปรับปรุง) */
+    .auth-card {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(15px); /* เพิ่มความเบลอ */
+      border-radius: 20px; /* ขอบโค้งขึ้น */
+      padding: 40px;
+      width: 100%;
+      max-width: 450px;
+      /* Shadow ที่ซับซ้อนขึ้น: 1. เงาด้านล่าง 2. เงาด้านใน */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.3); 
+      border: 1px solid rgba(255, 255, 255, 0.4); /* ขอบสีขาวจางๆ */
+      animation: fadeIn 1.0s ease-out; /* หน่วงเวลาการเกิด animation */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      text-decoration: none;
+      color: #222;
+      transition: transform 0.3s ease;
+    }
+
+    .brand:hover {
+      transform: scale(1.05); /* ลูกเล่น Hover ที่ Brand */
+    }
+
+    .brand img {
+      height: 55px; /* ขนาดใหญ่ขึ้นเล็กน้อย */
+      margin-right: 12px;
+    }
+
+    .brand span {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+    }
+    
+    /* Floating Label Customization */
+    .form-group-float {
+        position: relative;
+        margin-bottom: 25px; /* เว้นระยะมากขึ้น */
+    }
+    .form-group-float .form-control {
+        border-radius: 12px;
+        padding: 18px 12px 6px 12px; /* ปรับ Padding ให้มีพื้นที่ด้านบนสำหรับ Label */
+        height: 55px;
+        border: 1px solid #ccd1d7;
+        background: rgba(255, 255, 255, 0.7); /* Background input จางๆ */
+    }
+    .form-group-float .form-label {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        transition: all 0.2s ease-out;
+        pointer-events: none;
+        color: #6c757d;
+        font-weight: 400;
+    }
+    /* Effect when input is focused or has content */
+    .form-group-float .form-control:focus ~ .form-label,
+    .form-group-float .form-control:not(:placeholder-shown) ~ .form-label {
+        top: 0;
+        transform: translateY(12px) scale(0.85); /* เล็กและเลื่อนขึ้น */
+        color: var(--primary-color);
+        background-color: white;
+        padding: 0 4px;
+        border-radius: 4px;
+    }
+    
+    /* Password Toggle Icon */
+    .password-toggle-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #6c757d;
+        z-index: 10;
+        transition: color 0.2s;
+    }
+    .password-toggle-icon:hover {
+        color: var(--primary-color);
+    }
+    
+
+    /* Buttons (ปรับปรุง Hover) */
+    .btn-primary {
+      background: var(--primary-color);
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #005ec2;
+      transform: translateY(-2px); /* ยกขึ้นเล็กน้อย */
+      box-shadow: 0 4px 10px rgba(0, 123, 255, .3);
+    }
+
+    .btn-outline-success {
+      border-color: var(--secondary-color);
+      color: var(--secondary-color);
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-success:hover {
+      background: var(--secondary-color);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(25, 135, 84, .3);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="auth-card">
+
+    <a href="index.html" class="brand">
+      <img src="S__33316871.jpg" alt="Second Chance Logo">
+      <span class="fw-bold">Second Chance Clothing</span>
+    </a>
+
+    <h3 class="text-center mb-5 fw-bold" style="color:#333;">เข้าสู่ระบบสมาชิก</h3>
+
+    <form id="loginForm">
+      
+      <div class="form-group-float">
+        <input type="text" class="form-control" id="loginUsername" placeholder=" " required>
+        <label for="loginUsername" class="form-label">ชื่อผู้ใช้</label>
+      </div>
+
+      <div class="form-group-float mb-4">
+        <input type="password" class="form-control" id="loginPassword" placeholder=" " required>
+        <label for="loginPassword" class="form-label">รหัสผ่าน</label>
+        <i class="fa-solid fa-eye password-toggle-icon" id="togglePassword"></i>
+      </div>
+
+      <div class="d-grid gap-3 mt-4">
+        <button type="submit" class="btn btn-primary">
+          <i class="fa-solid fa-right-to-bracket me-2"></i> เข้าสู่ระบบ
+        </button>
+        <a class="btn btn-outline-success" href="register.html">
+          <i class="fa-solid fa-user-plus me-2"></i> สร้างบัญชี
+        </a>
+      </div>
+    </form>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ------------------------------------------------------------------
+    // 1. Password Visibility Toggle
+    // ------------------------------------------------------------------
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('loginPassword');
+
+    togglePassword.addEventListener('click', function (e) {
+      // สลับชนิดของ input ระหว่าง password และ text
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      
+      // สลับ icon (ตาเปิด/ตาปิด)
+      this.classList.toggle('fa-eye-slash');
+      this.classList.toggle('fa-eye');
+    });
+
+    // ------------------------------------------------------------------
+    // 2. Login Logic
+    // ------------------------------------------------------------------
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      
+      // ป้องกันการคลิกซ้ำขณะกำลังประมวลผล (ลูกเล่นเล็กๆ)
+      const submitBtn = this.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>กำลังเข้าสู่ระบบ...';
+
+      // จำลองการหน่วงเวลาเพื่อแสดงสถานะ Loading
+      setTimeout(() => {
+        const u = document.getElementById('loginUsername').value.trim();
+        const p = document.getElementById('loginPassword').value;
+        const users = JSON.parse(localStorage.getItem('sc_users') || '[]');
+        const found = users.find(x => x.username === u && x.password === p);
+
+        if (found) {
+          localStorage.setItem('sc_currentUser', JSON.stringify({ username: found.username, name: found.name || '' }));
+          alert('ยินดีต้อนรับ ' + (found.name || found.username) + '!');
+          location.href = 'index.html';
+        } else {
+          alert('ไม่พบผู้ใช้หรือรหัสผ่านผิด');
+          
+          // คืนค่าปุ่ม
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fa-solid fa-right-to-bracket me-2"></i> เข้าสู่ระบบ';
+        }
+      }, 800); // หน่วงเวลา 0.8 วินาที
+    });
+  </script>
+
+</body>
+</html>

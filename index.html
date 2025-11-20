@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="S__33316871.jpg" >
+  <title>Second Chance Clothing Co. — ให้เสื้อผ้ามีโอกาสครั้งที่สอง</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script-addons.js" defer></script>
+
+  <style>
+    /* Custom CSS สำหรับลูกเล่น: Hover Effects และ Product Badge */
+    html{scroll-behavior:smooth}
+
+    /* Button Hover Effect */
+    .btn-success, .btn-outline-success {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .btn-success:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(40, 167, 69, 0.4); /* เขียว */
+    }
+
+    /* Hero Image Hover Effect */
+    .hero-img {
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 8px; 
+    }
+    .hero-img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Product Card Hover Effect */
+    .product-card {
+        position: relative; /* สำหรับ Product Badge */
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+        transform: translateY(-5px); /* เลื่อนขึ้นเล็กน้อย */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15) !important;
+    }
+    .product-card .card-img-top {
+        height: 250px; /* กำหนดความสูงเพื่อให้ภาพดูสม่ำเสมอ */
+        object-fit: cover;
+    }
+
+    /* Product Badge (New/Bestseller Tag) */
+    .product-badge {
+        position: absolute;
+        top: 10px;
+        right: -25px; /* เลื่อนให้อยู่เฉียง */
+        padding: 2px 25px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        transform: rotate(45deg); /* หมุนให้เฉียง */
+        z-index: 10;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+
+</head>
+<body class="bg-white text-dark">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <img src="S__33316871.jpg" alt="Second Chance Clothing Co." style="height:50px;margin-right:10px; border-radius: 50%;">
+        <span class="fw-bold">Second Chance Clothing</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="d-flex ms-3">
+          <a class="btn btn-outline-success me-2 d-none d-lg-inline" href="login.html">Shop Now</a>
+          <a class="btn btn-success text-white" href="login.html">Sell With Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="py-5">
+    <div class="container py-4">
+      <div class="row align-items-center">
+        <div class="col-md-6 order-2 order-md-1" data-aos="fade-right">
+          <h1 class="display-6 fw-bold">ให้เสื้อผ้ามีโอกาสครั้งที่สอง</h1>
+          <p class="lead mb-4">Second Chance Clothing Co. — แพลตฟอร์มจำหน่ายเสื้อผ้ามือสองคุณภาพดี ที่คัดสภาพเหมือนใหม่ ผ่านระบบที่โปร่งใสและใช้งานง่าย</p>
+          <div class="d-flex gap-2">
+            <a href="login.html" class="btn btn-success btn-lg">เริ่มช้อปเลย</a>
+            <a href="login.html" class="btn btn-outline-success btn-lg">เริ่มขายตอนนี้</a>
+          </div>
+          <ul class="mt-4 list-unstyled d-flex gap-3 small">
+            <li><i class="fa-solid fa-circle-check text-success me-1"></i> ตรวจคุณภาพก่อนส่งต่อ</li>
+            <li><i class="fa-solid fa-leaf text-success me-1"></i> ลดขยะสิ่งทอ</li>
+          </ul>
+        </div>
+        <div class="col-md-6 text-center hero-col order-1 order-md-2 mb-4 mb-md-0" data-aos="fade-left">
+          <img src="IMG_2677.JPG" class="img-fluid hero-img rounded" alt="Second Chance Clothing hero image">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="features" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <h2 class="fw-bold">ทำไมต้องเลือกเรา</h2>
+        <p class="text-muted">บริการที่โปร่งใส ให้คุณมั่นใจเมื่อซื้อหรือขายเสื้อผ้ามือสอง</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-card p-4 h-100 text-center bg-white rounded shadow-sm">
+            <div class="fs-1 text-success mb-3"><i class="fa-solid fa-recycle"></i></div>
+            <h5 class="fw-bold">Eco-Friendly</h5>
+            <p class="text-muted">ลดขยะสิ่งทอ สนับสนุนการรีไซเคิลและการนำกลับมาใช้ใหม่</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card p-4 h-100 text-center bg-white rounded shadow-sm">
+            <div class="fs-1 text-success mb-3"><i class="fa-solid fa-shield-check"></i></div>
+            <h5 class="fw-bold">Quality Checked</h5>
+            <p class="text-muted">เสื้อผ้าทุกชิ้นผ่านการตรวจคุณภาพก่อนขาย</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card p-4 h-100 text-center bg-white rounded shadow-sm">
+            <div class="fs-1 text-success mb-3"><i class="fa-solid fa-sack-dollar"></i></div>
+            <h5 class="fw-bold">Fair Price</h5>
+            <p class="text-muted">ระบบเปรียบเทียบราคาขายที่ยุติธรรมและโปร่งใส</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">รายละเอียดสินค้า</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-6 text-center">
+              <img id="modalImg" src="" alt="" class="img-fluid rounded" style="max-height:420px; object-fit:contain;">
+            </div>
+            <div class="col-md-6">
+              <h4 id="modalTitle" class="fw-bold mb-2">Product Name</h4>
+              <div class="h4 text-success fw-bold mb-3" id="modalPrice">฿0</div>
+              <p id="modalDesc" class="text-muted">รายละเอียด</p>
+              <ul class="list-unstyled small mt-3">
+                <li><strong>ไซส์ / ขนาด:</strong> <span id="modalSize"></span></li>
+                <li><strong>เพศ:</strong> <span id="modalGender"></span></li>
+              </ul>
+              <div class="mt-4">
+                <button id="addCartBtn" class="btn btn-success btn-lg"><i class="fa fa-cart-plus me-2"></i>เพิ่มลงตะกร้า (<span id="modalPriceSmall">฿0</span>)</button>
+              </div>
+              <div class="mt-2 text-muted small">* หมายเหตุ: ระบบตะกร้าจำลอง (Front-end) ยังไม่ได้เชื่อมกับ Backend</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="products" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <h2 class="fw-bold">สินค้าแนะนำ</h2>
+        <p class="text-muted">เสื้อผ้ามือสองคุณภาพคัดสภาพ เหมือนใหม่ พร้อมส่ง</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card product-card h-100 shadow-sm">
+            <div class="product-badge bg-success text-white">ใหม่!</div>
+            <img src="IMG_2678.JPG" class="card-img-top" alt="Vintage Jacket">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title mb-1">Vintage Jacket</h6>
+              <p class="text-muted small mb-2">Size M — สภาพดี</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div class="fw-bold text-success">฿450</div>
+           <a href="#" class="btn btn-sm btn-outline-success view-btn" 
+             data-id="p1" data-name="Vintage Jacket" data-price="450" data-img="IMG_2678.JPG"
+             data-desc="เสื้อแจ็คเก็ตผ้าคอตตอนสีขาว ใส่สบาย เหมาะสำหรับสไตล์วินเทจ" data-size="M" data-gender="ผู้หญิง">ดูสินค้า</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card product-card h-100 shadow-sm">
+            <div class="product-badge bg-danger text-white">ขายดี</div>
+            <img src="IMG_2679.JPG" class="card-img-top" alt="Folded Shirts">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title mb-1">เสื้อเชิ้ตลาย</h6>
+              <p class="text-muted small mb-2">Size L — สภาพเหมือนใหม่</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div class="fw-bold text-success">฿220</div>
+           <a href="#" class="btn btn-sm btn-outline-success view-btn" 
+             data-id="p2" data-name="เสื้อเชิ้ตลาย" data-price="220" data-img="IMG_2679.JPG"
+             data-desc="เสื้อเชิ้ตลายสวย เหมาะสำหรับใส่ออกงานหรือใส่ลำลอง สภาพเหมือนใหม่" data-size="L" data-gender="ผู้หญิง">ดูสินค้า</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="IMG_2680.JPG" class="card-img-top" alt="Denim Jeans">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title mb-1">ชุดนอนไม่ได้นอน</h6>
+              <p class="text-muted small mb-2">Size 32 — ยีนส์สภาพดี</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div class="fw-bold text-success">฿360</div>
+           <a href="#" class="btn btn-sm btn-outline-success view-btn" 
+             data-id="p3" data-name="ชุดนอนไม่ได้นอน" data-price="360" data-img="IMG_2680.JPG"
+             data-desc="เซ็ทนอนสไตล์คิวท์ เนื้อผ้านุ่ม สภาพดี" data-size="32" data-gender="ผู้ชาย">ดูสินค้า</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="IMG_2681.JPG" class="card-img-top" alt="Summer Dress">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title mb-1">เดรสหน้าร้อน</h6>
+              <p class="text-muted small mb-2">Size S — ลายน่ารัก</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div class="fw-bold text-success">฿300</div>
+           <a href="#" class="btn btn-sm btn-outline-success view-btn" 
+             data-id="p4" data-name="เดรสหน้าร้อน" data-price="300" data-img="IMG_2681.JPG"
+             data-desc="เดรสลายสวย สำหรับหน้าร้อน ให้ลุคสดใส สภาพดี" data-size="S" data-gender="ผู้หญิง">ดูสินค้า</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product-hidden" style="display:none;" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="Screenshot 2025-11-19 180947.png" class="card-img-top" alt="เสื้อสวยๆ">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title mb-1">เสื้อสวยๆ</h6>
+              <p class="text-muted small mb-2">Size M — สภาพดี</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div class="fw-bold text-success">฿380</div>
+           <a href="#" class="btn btn-sm btn-outline-success view-btn" 
+             data-id="p5" data-name="เสื้อสวยๆ" data-price="380" data-img="Screenshot 2025-11-19 180947.png"
+             data-desc="เสื้อสวยสภาพดี เหมาะสำหรับแต่งตัวหลากหลายโอกาส" data-size="M" data-gender="ผู้หญิง">ดูสินค้า</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product-hidden" style="display:none;" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card product-card h-100 shadow-sm">
+             <img src="111.png" class="card-img-top" alt="กางเกง">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title mb-1">กางเกงสวยๆ</h6>
+              <p class="text-muted small mb-2">Size 30 — เหมือนใหม่</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div class="fw-bold text-success">฿280</div>
+           <a href="#" class="btn btn-sm btn-outline-success view-btn" 
+             data-id="p6" data-name="กางเกงสวยๆ" data-price="280" data-img="111.png"
+             data-desc="กางเกงเอวยางยืด ใส่สบาย สภาพดี" data-size="30" data-gender="ผู้ชาย">ดูสินค้า</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product-hidden" style="display:none;" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card product-card h-100 shadow-sm">
+            <div class="product-badge bg-info text-white">Classic</div>
+            <img src="000.png" class="card-img-top" alt="000">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title mb-1">เสื้อโปโลคลาสสิก</h6>
+              <p class="text-muted small mb-2">Size L — สภาพดี</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div class="fw-bold text-success">฿320</div>
+           <a href="#" class="btn btn-sm btn-outline-success view-btn" 
+             data-id="p7" data-name="เสื้อโปโลคลาสสิก" data-price="320" data-img="assets/products/product3.jpg"
+             data-desc="เสื้อโปโลผ้าคุณภาพ ลุคคลาสสิก สภาพดี" data-size="L" data-gender="ผู้ชาย">ดูสินค้า</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product-hidden" style="display:none;" data-aos="zoom-in" data-aos-delay="400">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="101.png" class="card-img-top" alt="000">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title mb-1">เสื้อยืดแนวนอน</h6>
+              <p class="text-muted small mb-2">Size M — ลายสวย</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div class="fw-bold text-success">฿150</div>
+           <a href="#" class="btn btn-sm btn-outline-success view-btn" 
+             data-id="p8" data-name="เสื้อยืดแนวนอน" data-price="150" data-img="101.png"
+             data-desc="เสื้อยืดลายแนวนอน เบาสบาย สภาพดี" data-size="M" data-gender="ผู้หญิง">ดูสินค้า</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product-hidden" style="display:none;" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="102.png" class="card-img-top" alt="000">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title mb-1">แจ็คเก็ตลำลอง</h6>
+              <p class="text-muted small mb-2">Size M — สภาพดี</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div class="fw-bold text-success">฿490</div>
+           <a href="#" class="btn btn-sm btn-outline-success view-btn" 
+             data-id="p9" data-name="แจ็คเก็ตลำลอง" data-price="490" data-img="102.png"
+             data-desc="แจ็คเก็ตสไตล์ลำลอง เท่และอบอุ่น" data-size="M" data-gender="ผู้ชาย">ดูสินค้า</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 product-hidden" style="display:none;" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card product-card h-100 shadow-sm">
+            <img src="S.png" class="card-img-top" alt="000">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title mb-1">ชุดออกงาน</h6>
+              <p class="text-muted small mb-2">Size S — เหมือนใหม่</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div class="fw-bold text-success">฿650</div>
+           <a href="#" class="btn btn-sm btn-outline-success view-btn" 
+             data-id="p10" data-name="ชุดออกงาน" data-price="650" data-img="S.png"
+             data-desc="ชุดออกงานสภาพดี เหมาะสำหรับงานพิเศษ" data-size="S" data-gender="ผู้หญิง">ดูสินค้า</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4" data-aos="fade-up">
+        <a href="#" id="loadMoreBtn" class="btn btn-outline-success" onclick="toggleProducts(event)">ดูสินค้าทั้งหมด</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="py-5">
+    <div class="container" data-aos="fade-up">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">คำรับรองจากลูกค้า</h2>
+        <p class="text-muted">เสียงจริงจากผู้ใช้งานของเรา</p>
+      </div>
+
+      <div id="testiCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 text-center text-md-start">
+              <img src="https://i.pravatar.cc/120?img=47" class="rounded-circle shadow-sm" alt="คุณอิง">
+              <div>
+                <h5 class="mb-1">คุณอิง</h5>
+                <p class="mb-0">“เสื้อผ้าสภาพดีเหมือนใหม่ ส่งเร็วมากค่ะ 💖”</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 text-center text-md-start">
+              <img src="https://i.pravatar.cc/120?img=12" class="rounded-circle shadow-sm" alt="คุณบอส">
+              <div>
+                <h5 class="mb-1">คุณบอส</h5>
+                <p class="mb-0">“ขายง่าย ได้ราคาดี แนะนำเลยครับ!”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testiCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testiCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="contact" class="py-5 bg-white border-top">
+    <div class="container">
+      <div class="row align-items-center" data-aos="fade-up">
+        <div class="col-md-6">
+          <h5 class="fw-bold">ติดตาม Second Chance Clothing</h5>
+          <p class="text-muted mb-2">เพื่อไม่พลาดเทรนด์แฟชั่นรักษ์โลก</p>
+        </div>
+        <div class="col-md-6 text-md-end footer-social">
+          <a href="https://www.facebook.com/share/g/1Bb92AGEfF/?mibextid=wwXIfr" class="btn btn-outline-secondary btn-sm me-2" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f me-1"></i>Facebook</a>
+          <a href="https://www.instagram.com/mydream.studi0?igsh=NmpvMWhjNWEzZ2Zz" class="btn btn-outline-secondary btn-sm me-2" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram me-1"></i>Instagram</a>
+          <a href="https://www.tiktok.com/@user508391348?_r=1&_t=ZS-91VadDPYkFD" class="btn btn-outline-secondary btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok me-1"></i>TikTok</a>
+        </div>
+      </div>
+
+      <div class="text-center mt-4 small text-muted">© <span id="year"></span> Second Chance Clothing Co. — ให้เสื้อผ้ามีโอกาสครั้งที่สอง</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    // Initialize AOS
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 1000, 
+            once: true 
+        });
+    });
+
+    // Insert current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Toggle hidden products
+    let allProductsShown = false;
+    function toggleProducts(e) {
+      e.preventDefault();
+      const hiddenProducts = document.querySelectorAll('.product-hidden');
+      const btn = document.getElementById('loadMoreBtn');
+      
+      if (allProductsShown) {
+        hiddenProducts.forEach(p => p.style.display = 'none');
+        btn.textContent = 'ดูสินค้าทั้งหมด';
+        allProductsShown = false;
+      } else {
+        hiddenProducts.forEach(p => p.style.display = 'block');
+        btn.textContent = 'ซ่อนสินค้า';
+        allProductsShown = true;
+      }
+    }
+
+    // Product detail modal handling
+    document.addEventListener('DOMContentLoaded', function () {
+      const viewBtns = document.querySelectorAll('.view-btn');
+      viewBtns.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          const d = btn.dataset;
+          const name = d.name || '';
+          const price = d.price || '0';
+          const img = d.img || '';
+          const desc = d.desc || '';
+          const size = d.size || '';
+          const gender = d.gender || '';
+
+          document.getElementById('modalTitle').textContent = name;
+          document.getElementById('modalPrice').textContent = '฿' + price;
+          document.getElementById('modalPriceSmall').textContent = '฿' + price;
+          document.getElementById('modalDesc').textContent = desc;
+          document.getElementById('modalSize').textContent = size;
+          document.getElementById('modalGender').textContent = gender;
+
+          const imgEl = document.getElementById('modalImg');
+          imgEl.src = img;
+          imgEl.alt = name;
+
+          const productModal = new bootstrap.Modal(document.getElementById('productModal'));
+          productModal.show();
+        });
+      });
+
+      // Add to cart (simulated) — require login first, otherwise redirect to login page
+      const addBtn = document.getElementById('addCartBtn');
+      addBtn.addEventListener('click', function () {
+        // check login marker
+        const current = JSON.parse(localStorage.getItem('sc_currentUser') || 'null');
+        if (!current) {
+          // not logged in: send to login page
+          location.href = 'login.html';
+          return;
+        }
+
+        const name = document.getElementById('modalTitle').textContent;
+        const priceText = document.getElementById('modalPriceSmall').textContent || '฿0';
+        const price = priceText.replace(/[฿,\s]/g, '') || '0';
+
+        // simple cart in localStorage
+        const cart = JSON.parse(localStorage.getItem('sc_cart') || '[]');
+        cart.push({ name: name, price: Number(price), qty: 1, addedAt: Date.now(), user: current.username });
+        localStorage.setItem('sc_cart', JSON.stringify(cart));
+
+        // feedback
+        const origHtml = addBtn.innerHTML;
+        addBtn.classList.add('disabled');
+        addBtn.innerHTML = '<i class="fa fa-check me-2"></i>เพิ่มแล้ว ✓';
+        setTimeout(() => {
+          // restore button and close modal
+          addBtn.classList.remove('disabled');
+          addBtn.innerHTML = origHtml;
+          const modalEl = document.getElementById('productModal');
+          const bs = bootstrap.Modal.getInstance(modalEl);
+          if (bs) bs.hide();
+        }, 900);
+      });
+    });
+  </script>
+</body>
+</html>
